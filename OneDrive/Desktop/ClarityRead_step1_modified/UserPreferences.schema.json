@@ -1,0 +1,94 @@
+{
+  "name": "UserPreferences",
+  "type": "object",
+  "properties": {
+    "font_family": {
+      "type": "string",
+      "enum": [
+        "system",
+        "dyslexie",
+        "opendyslexic",
+        "comic-sans",
+        "arial"
+      ],
+      "default": "system",
+      "description": "Preferred font for reading"
+    },
+    "font_size": {
+      "type": "number",
+      "default": 18,
+      "description": "Font size in pixels"
+    },
+    "line_height": {
+      "type": "number",
+      "default": 1.6,
+      "description": "Line height multiplier"
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark",
+        "high-contrast",
+        "sepia"
+      ],
+      "default": "light",
+      "description": "Display theme"
+    },
+    "voice_name": {
+      "type": "string",
+      "description": "Preferred TTS voice"
+    },
+    "voice_rate": {
+      "type": "number",
+      "default": 1,
+      "description": "Speech rate (0.5 - 2.0)"
+    },
+    "voice_pitch": {
+      "type": "number",
+      "default": 1,
+      "description": "Voice pitch (0.5 - 2.0)"
+    },
+    "highlight_color": {
+      "type": "string",
+      "default": "#3b82f6",
+      "description": "Color for text highlighting"
+    },
+    "auto_scroll": {
+      "type": "boolean",
+      "default": true,
+      "description": "Auto scroll during reading"
+    },
+    "reading_goals": {
+      "type": "object",
+      "properties": {
+        "daily_minutes": {
+          "type": "number",
+          "default": 30
+        },
+        "weekly_sessions": {
+          "type": "number",
+          "default": 5
+        }
+      }
+    },
+    "notifications": {
+      "type": "object",
+      "properties": {
+        "daily_reminder_enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "weekly_summary_enabled": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "default": {
+        "daily_reminder_enabled": false,
+        "weekly_summary_enabled": false
+      }
+    }
+  },
+  "required": []
+}

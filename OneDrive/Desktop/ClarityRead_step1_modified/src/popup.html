@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>ClarityRead</title>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT: Controls -->
+    <section class="controls" aria-label="Controls">
+      <header class="header card header-card">
+        <div class="header-left">
+          <img src="assets/icons/icon128.png" alt="ClarityRead logo" class="logo">
+          <div class="title-wrap">
+            <h1 class="title">ClarityRead</h1>
+            <div id="readingStatus" class="readingStatus" aria-live="polite" title="Current status"></div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="themeToggleBtn" class="ghost">Theme</button>
+        </div>
+      </header>
+
+      <div class="toggles card">
+        <div class="card-row">
+          <label class="switch"><input id="dyslexicToggle" type="checkbox"><span>Dyslexia font</span></label>
+          <label class="switch"><input id="reflowToggle" type="checkbox"><span>Reading mode</span></label>
+        </div>
+
+        <div class="card-row">
+          <label class="switch"><input id="contrastToggle" type="checkbox"><span>High contrast</span></label>
+          <label class="switch"><input id="invertToggle" type="checkbox"><span>Invert</span></label>
+        </div>
+
+        <div id="sizeOptions" class="sizeOptions" hidden>
+          <label class="sizeLabel">Font size:
+            <span id="fontSizeValue" class="fontSizeValue">20px</span>
+          </label>
+          <input id="fontSizeSlider" class="range" type="range" min="14" max="30" step="1" value="20" />
+        </div>
+      </div>
+
+      <div class="profiles card">
+        <h3 class="section-title">Profiles</h3>
+        <div class="row">
+          <select id="profileSelect" class="fullwidth">
+            <option value="">Select a profile</option>
+          </select>
+          <button id="saveProfileBtn" class="btn">Save</button>
+        </div>
+      </div>
+
+      <div id="readAloudSettings" class="readArea card">
+        <h3 class="section-title">Read Aloud</h3>
+
+        <div class="form-row">
+          <label class="label">Voice
+            <select id="voiceSelect" class="wide"></select>
+          </label>
+        </div>
+
+        <div class="form-row smalls">
+          <label>Rate
+            <input type="number" id="rateInput" value="1" min="0.5" max="2" step="0.1">
+          </label>
+          <label>Pitch
+            <input type="number" id="pitchInput" value="1" min="0.5" max="2" step="0.1">
+          </label>
+        </div>
+
+        <label class="checkbox"><input type="checkbox" id="highlightReading"> Highlight while reading</label>
+
+        <div class="controls-row">
+          <button id="readBtn" class="btn primary">Read ▶</button>
+          <button id="pauseBtn" class="btn">Pause</button>
+          <button id="stopBtn" class="btn">Stop ◼</button>
+        </div>
+      </div>
+
+      <div id="speedReadingSettings" class="card">
+        <h3 class="section-title">Speed reading</h3>
+        <label class="switch"><input id="speedToggle" type="checkbox"><span>Enable speed-reading</span></label>
+
+        <div class="form-row smalls">
+          <label>Chunk size
+            <input id="chunkSize" type="number" value="3" min="1" max="12" step="1">
+          </label>
+          <label>Rate
+            <input id="speedRate" type="number" value="1" min="0.5" max="3" step="0.1">
+          </label>
+        </div>
+      </div>
+
+      <div class="exportImport card">
+        <button id="exportProfilesBtn" class="ghost">Export Profiles</button>
+        <input type="file" id="importProfilesInput" accept=".json" style="display:none;">
+        <button id="importProfilesBtn" class="ghost">Import</button>
+      </div>
+
+      <div class="savedReads card">
+        <h3 class="section-title">Saved reads</h3>
+        <div class="save-controls">
+          <button id="saveSelectionBtn" class="btn">Save Selection</button>
+          <button id="openSavedManagerBtn" class="ghost">Manage</button>
+        </div>
+        <div id="savedList" class="saved-list" aria-live="polite"></div>
+      </div>
+
+      <div class="shortcuts card">
+        <h3 class="section-title">Keyboard Shortcuts</h3>
+        <ul>
+          <li>Start: <kbd>Alt+R</kbd></li>
+          <li>Stop: <kbd>Alt+S</kbd></li>
+        </ul>
+      </div>
+
+      <footer class="footer">
+        <small>Tip: select text on the page to read only that selection.</small>
+      </footer>
+    </section>
+
+<!-- AI Summary panel (injected) -->
+<section id="aiSummary" class="card" aria-label="AI Summary" style="margin-top:12px;padding:12px;display:block;">
+  <header style="font-weight:600;margin-bottom:8px;">AI Summary</header>
+  <div id="summaryContent" style="min-height:40px;">No summary yet. Select text or click summarize.</div>
+  <div style="margin-top:8px;display:flex;gap:8px;">
+    <button id="summarizeBtn" class="btn">Summarize</button>
+    <button id="copySummaryBtn" class="ghost">Copy</button>
+    <span id="summarySource" style="margin-left:auto;font-size:12px;color:#666;"></span>
+  </div>
+</section>
+
+
+
+    <!-- RIGHT: Stats / Theme -->
+    <aside class="sidebar" aria-label="Reading stats">
+      <div class="sidebar-top card">
+        <div class="themeRow">
+          <button id="summarizePageBtn" class="ghost">Summarize</button>
+          <button id="focusModeBtn" class="ghost">Focus Mode</button>
+        </div>
+      </div>
+
+      <div id="stats" class="statsPanel card">
+        <h3 class="section-title">Reading Stats</h3>
+
+        <!-- Chart wrapper has fixed height to prevent smushing -->
+        <div class="chartWrapper" aria-hidden="false">
+          <canvas id="statsChart" role="img" aria-label="Pages read chart"></canvas>
+        </div>
+
+        <div id="statsPanel" class="statsRows">
+          <div><span>Pages read</span><strong id="pagesRead">0</strong></div>
+          <div><span>Total time</span><strong id="timeRead">0m 0s</strong></div>
+          <div><span>Average session</span><strong id="avgSession">0m 0s</strong></div>
+        </div>
+
+        <div id="badgesContainer" class="badges" aria-hidden="false"></div>
+
+        <div class="stats-actions">
+          <button id="resetStatsBtn" class="ghost">Reset</button>
+          <button id="shareStatsBtn" class="btn">Share</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="popup.js"></script>
+
+
+<!-- Backend settings (stored in chrome.storage.sync) -->
+<section id="backendSettings" class="card" style="margin-top:12px;padding:12px;">
+  <header style="font-weight:600;margin-bottom:8px;">Backend / API</header>
+  <div style="display:flex;gap:8px;align-items:center;">
+    <input id="backendUrlInput" type="url" placeholder="http://localhost:8787" style="flex:1;padding:8px;" />
+    <button id="saveBackendBtn" class="btn">Save</button>
+  </div>
+  <div style="font-size:12px;color:#666;margin-top:8px;">
+    Enter the backend URL to enable real summarization and analytics (e.g. <code>http://localhost:8787</code>).
+  </div>
+</section>
+
+
+</body>
+</html>

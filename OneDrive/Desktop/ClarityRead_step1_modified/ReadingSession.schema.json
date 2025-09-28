@@ -1,0 +1,43 @@
+{
+  "name": "ReadingSession",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the reading material"
+    },
+    "content": {
+      "type": "string",
+      "description": "The text content that was read"
+    },
+    "word_count": {
+      "type": "number",
+      "description": "Total number of words in the content"
+    },
+    "reading_time_minutes": {
+      "type": "number",
+      "description": "Time spent reading in minutes"
+    },
+    "completion_percentage": {
+      "type": "number",
+      "description": "Percentage of content completed"
+    },
+    "reading_speed_wpm": {
+      "type": "number",
+      "description": "Words per minute reading speed"
+    },
+    "voice_used": {
+      "type": "string",
+      "description": "Text-to-speech voice that was used"
+    },
+    "settings_used": {
+      "type": "object",
+      "description": "Reading settings applied during this session"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "word_count"
+  ]
+}
