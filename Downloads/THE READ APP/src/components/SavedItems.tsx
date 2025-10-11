@@ -122,4 +122,5 @@ export default function SavedItems({ onLoadText }: SavedItemsProps) {
     </Card>
   );
 }
+
  

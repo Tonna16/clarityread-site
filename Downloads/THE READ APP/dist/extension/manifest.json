@@ -16,10 +16,7 @@
     "contextMenus",
     "commands"
   ],
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*"
-  ],
+  "host_permissions": [],
   "action": {
     "default_icon": {
       "16": "icons/icon16.png",
@@ -31,21 +28,12 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "content_scripts": [
-    {
-      "matches": ["https://*/*", "http://*/*"],
-      "js": ["contentScript.js"],
-      "css": ["inject.css"],
-      "run_at": "document_idle"
-    }
-  ],
   "web_accessible_resources": [
     {
       "resources": [
-        "fonts/OpenDyslexic-Regular.woff2",
-        "fonts/OpenDyslexic-Regular.woff",
-        "inject.css",
-        "assets/*"
+        "assets/*",
+        "fonts/*",
+        "icons/*"
       ],
       "matches": ["<all_urls>"]
     }
