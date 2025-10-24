@@ -5,51 +5,114 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Privacy Policy — ClarityRead</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; max-width: 900px; margin: 36px auto; line-height: 1.6; color: #111; padding: 0 18px; }
-    h1,h2 { color: #111; }
-    footer { margin-top: 36px; font-size: 0.9rem; color: #555; }
-    a { color: #0a66ff; }
-    code { background:#f4f4f4;padding:2px 6px;border-radius:4px; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      max-width: 850px;
+      margin: 40px auto;
+      line-height: 1.7;
+      color: #222;
+      padding: 0 20px;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5em;
+      color: #111;
+    }
+    h2 {
+      margin-top: 1.8em;
+      color: #0a66ff;
+      font-size: 1.3rem;
+    }
+    p, li {
+      margin-bottom: 1em;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      text-align: center;
+    }
+    a {
+      color: #0a66ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+    .summary-box {
+      background: #eef5ff;
+      border: 1px solid #cdddfc;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+    .summary-box h2 {
+      margin-top: 0;
+      color: #0a66ff;
+    }
   </style>
 </head>
 <body>
   <h1>Privacy Policy — ClarityRead</h1>
-  <p>Last updated: <strong>2025-10-23</strong></p>
+  <p><em>Last updated: <strong>2025-10-23</strong></em></p>
 
-  <h2>Who we are</h2>
-  <p>ClarityRead is created and maintained by an independent developer. This extension is offered to help make reading on the web easier via dyslexia-friendly fonts, reflowed reading, read-aloud, and a local summarizer.</p>
+  <section class="summary-box">
+    <h2>Quick Summary (TL;DR)</h2>
+    <ul>
+      <li>I don’t send your page content or selections to any server by default — everything runs locally in your browser.</li>
+      <li>Your preferences, saved reads, and stats are stored only on your device.</li>
+      <li>I don’t collect personal data unless you choose to share it (e.g. by emailing me).</li>
+      <li>Optional cloud features may be added in the future, but they’ll always be opt-in and clearly explained.</li>
+      <li>You can contact me anytime at <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a>.</li>
+    </ul>
+  </section>
+
+  <h2>Who I am</h2>
+  <p>ClarityRead is created and maintained by me, an independent developer. I built this extension to make reading on the web easier through dyslexia-friendly fonts, reflowed reading, read-aloud, and a local summarizer.</p>
 
   <h2>Summary — no remote data transfer by default</h2>
-  <p><strong>ClarityRead does not send page content or user selections to any remote server by default.</strong> The summarizer and text-to-speech use local browser capabilities. All user data described below is stored locally in the browser unless you explicitly enable an optional cloud feature (which will prompt you and request your consent).</p>
+  <p><strong>ClarityRead does not send page content or user selections to any remote server by default.</strong> The summarizer and text-to-speech use only your browser’s built-in capabilities. All user data described below is stored locally in your browser unless you explicitly enable an optional cloud feature (which will always ask for your consent first).</p>
 
-  <h2>What we store locally</h2>
+  <h2>What I store locally</h2>
   <ul>
     <li><strong>Preferences</strong> (font choice, reflow, high contrast, voice settings) — stored in <code>chrome.storage.local</code>.</li>
     <li><strong>Saved reads / summaries</strong> — stored locally and accessible only to the extension in your browser profile.</li>
     <li><strong>Reading statistics</strong> — aggregated locally for charts and usage insights.</li>
-    <li><strong>Export / Import</strong> — you may export saved reads & settings as a JSON file and re-import them at your discretion. Exported files are under your control.</li>
+    <li><strong>Export / Import</strong> — you may export saved reads & settings as a JSON file and re-import them at your discretion. Exported files are fully under your control.</li>
   </ul>
 
-  <h2>What we do NOT collect</h2>
+  <h2>What I do NOT collect</h2>
   <ul>
-    <li>We do not collect or store browsing history, page URLs, or page content on our servers by default.</li>
-    <li>We do not collect personal data or identifiable information unless you explicitly provide it (for example, in a support email).</li>
+    <li>I do not collect or store browsing history, page URLs, or page content on any server by default.</li>
+    <li>I do not collect personal data or identifiable information unless you explicitly provide it (for example, in a support email).</li>
   </ul>
 
   <h2>Optional cloud features (explicit opt-in only)</h2>
-  <p>If an optional remote/cloud feature exists or is added later (for example, server-side summarization or backup), it will be clearly marked in the UI and will only be used after obtaining your explicit consent. If you enable such a feature, the extension will tell you exactly what data will be sent and to which host. You can revoke the feature at any time from extension settings.</p>
+  <p>If optional cloud features are added in the future (for example, server-side summarization or backup), they will be clearly marked in the UI and will only be used after you give explicit consent. If you enable such a feature, ClarityRead will explain exactly what data is sent and to which host. You can disable these features at any time in the extension settings.</p>
 
   <h2>Text-to-speech</h2>
-  <p>ClarityRead uses your browser's built-in speech synthesis (the Web Speech API) — voices available are provided by your browser/OS. No audio or text is sent to external services for TTS unless you explicitly enable an optional cloud TTS feature (which will prompt you first).</p>
+  <p>ClarityRead uses your browser’s built-in speech synthesis (the Web Speech API). The voices available are provided by your browser or operating system. No audio or text is sent to external services for text-to-speech unless you explicitly enable an optional cloud TTS feature (which will always prompt you first).</p>
 
   <h2>Security & retention</h2>
-  <p>Data stored locally remains on your device and will remain until you delete it or uninstall the extension. If you enable any optional cloud feature, that remote data retention will be described in the opt-in dialog. We encourage you not to upload extremely sensitive personal information to any service.</p>
+  <p>Data stored locally remains on your device until you delete it or uninstall the extension. If you enable any optional cloud feature, the retention policy for that data will be described in the opt-in dialog. I recommend avoiding uploading highly sensitive personal information to any service.</p>
 
   <h2>Contact</h2>
-  <p>If you have questions about this policy or want to request deletion of any server-side data you opted into, contact: <a href="mailto:you@example.com">ttonnaagburu@gmail.com</a>.</p>
+  <p>If you have questions about this policy or want to request deletion of any server-side data you opted into, you can reach me at: <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a>.</p>
 
   <h2>Changes to this policy</h2>
-  <p>We may update this policy occasionally. The “Last updated” date at the top will reflect changes.</p>
+  <p>I may update this policy occasionally. The “Last updated” date at the top will always reflect the most recent changes.</p>
 
   <footer>
     <p>&copy; 2025 ClarityRead — Independent developer. This policy applies only to the ClarityRead extension.</p>
