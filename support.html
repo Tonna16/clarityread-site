@@ -16,6 +16,8 @@
     form label{display:block;margin-top:10px;font-weight:600}
     input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #d7e6ff;margin-top:6px}
     .note{font-size:0.95rem;color:#666;margin-top:8px}
+    pre.diag{background:#f6f9ff;border-radius:8px;padding:12px;white-space:pre-wrap;max-height:220px;overflow:auto}
+    .muted{color:#666}
   </style>
 </head>
 <body>
@@ -31,27 +33,36 @@
     <div class="card">
       <h3>Report an issue (recommended)</h3>
       <p>If you use GitHub, open an issue on the repository so I can track and respond:</p>
-      <p><a class="button" href="https://github.com/Tonna16/clarityread-site/issues" target="_blank" rel="noopener noreferrer">Open GitHub Issue</a></p>
-
+      <p><a class="button" href="https://github.com/Tonna16/ClarityRead/issues" target="_blank" rel="noopener noreferrer">Open GitHub Issue</a></p>
     </div>
 
     <div class="card">
       <h3>Quick troubleshooting</h3>
       <ul>
-        <li>Ensure the extension is enabled in chrome://extensions.</li>
+        <li>Ensure the extension is enabled in <code>chrome://extensions</code>.</li>
         <li>Try disabling other reader or accessibility extensions — they may conflict.</li>
         <li>If read-aloud fails, check your browser's speech voices and permissions.</li>
       </ul>
     </div>
 
-    <div style="margin-top:18px" class="card">
-      <h3>Feedback</h3>
-      <p>If you'd like to support development, consider starring the GitHub repo or sharing the extension with friends.
+    <div class="card">
+      <h3>Debugging & diagnostics (privacy-first)</h3>
+      <p class="note">I’ve disabled automatic console logs by default to protect privacy. If you run into a problem, use these safe options to help me debug without sending page content.</p>
+
+      <ul>
+        <li><strong>Enable debug mode (optional)</strong> — the extension can offer a temporary debug toggle in its popup/options. When enabled it collects minimal diagnostics (extension version, browser user agent, recent extension errors) and shows a <em>Copy diagnostics</em> button you can paste into an issue or email.</li>
+        <li><strong>Reproduction steps</strong> — list exactly: site URL, steps you took, what you expected, and what happened. This is often enough to fix many issues.</li>
+        <li><strong>Screenshots</strong> — a screenshot of the problem and the extension UI is often the fastest way to debug.</li>
+        <li><strong>Safe log snippet</strong> — if comfortable, open DevTools, copy only the relevant error lines (not page content), and paste them in an issue/email.</li>
+      </ul>
+
+      <p class="note">If you'd like, I can add the temporary <em>Copy diagnostics</em> debug toggle before the next release — it only runs while you enable it and nothing is sent anywhere automatically.</p>
     </div>
 
     <section style="margin-top:20px" class="card">
-      <h3>Local logs (optional)</h3>
-      <p class="note">To help debug issues you can copy the extension console logs and paste them into an issue or email. Avoid pasting full-page content — include only relevant error lines and a short reproduction steps list.</p>
+      <h3>Where I’m tracking issues</h3>
+      <p class="muted">Primary repo: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p>
+      <p class="muted">Site repo: <a href="https://github.com/Tonna16/clarityread-site" target="_blank" rel="noopener noreferrer">Tonna16 / clarityread-site</a></p>
     </section>
   </main>
 
