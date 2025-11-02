@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Features & Design — ClarityRead</title>
+  <meta name="description" content="Detailed feature list and design decisions for ClarityRead." />
+  <style>
+    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;margin:0;background:#fbfcff;color:#111}
+    main{max-width:920px;margin:36px auto;padding:22px}
+    h1{margin:0 0 8px}
+    .card{background:white;border:1px solid #e9f0ff;padding:18px;border-radius:10px;margin-top:14px}
+    footer{max-width:920px;margin:30px auto 60px;padding:20px;color:#666;text-align:center;font-size:0.95rem}
+    pre{background:#f6f9ff;padding:12px;border-radius:8px;overflow:auto}
+    .muted{color:#666;font-size:0.95rem}
+    ul{padding-left:20px}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Features & design decisions</h1>
+    <p class="muted">A friendly, transparent explanation of what ClarityRead does, why the features exist, and how decisions were made.</p>
+
+    <section class="card">
+      <h2>Core goals</h2>
+      <ul>
+        <li><strong>Privacy-first</strong> — processing happens locally in the browser by default; nothing is sent to remote servers unless you explicitly opt in.</li>
+        <li><strong>Readability</strong> — provide dyslexia-friendly fonts, reflow, and adjustable typography so users can read comfortably across devices.</li>
+        <li><strong>Simplicity</strong> — features are focused and discoverable; the UI avoids overwhelming options.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Dyslexia font</h2>
+      <p><strong>What</strong>: an OpenDyslexic-like font and spacing adjustments that make letterforms easier to distinguish.</p>
+      <p><strong>Why</strong>: research and accessibility guidance suggest specialized typefaces and increased letter spacing can help some readers with dyslexia reduce letter confusion. The font is applied locally and users can toggle it off.</p>
+    </section>
+
+    <section class="card">
+      <h2>Text reflow & reader overlay</h2>
+      <p><strong>What</strong>: reformat long pages into a narrow readable column, with adjustable font size and line height.</p>
+      <p><strong>Why</strong>: many websites use multi-column layouts, sidebars, or tiny type that make sustained reading difficult. Reflow makes reading comfortable on small screens and reduces visual clutter.</p>
+    </section>
+
+    <section class="card">
+      <h2>High contrast & invert modes</h2>
+      <p><strong>What</strong>: toggles to increase contrast and optionally invert colors for better visibility.</p>
+      <p><strong>Why</strong>: users with low vision or light sensitivity can benefit from greater contrast or inverted palettes. These modes are simple CSS transforms applied locally.</p>
+    </section>
+
+    <section class="card">
+      <h2>Read-aloud (text-to-speech)</h2>
+      <p><strong>What</strong>: uses the browser's Web Speech API to speak selected text or the main article.</p>
+      <p><strong>Why</strong>: audio complements visual reading — helpful for dyslexia, multitasking, or proofreading.</p>
+      <p><strong>Privacy</strong>: by default the browser provides voices locally. If a cloud TTS option is offered in the future it will be opt-in and you’ll be shown what is sent.</p>
+    </section>
+
+    <section class="card">
+      <h2>Local summarizer and saved reads</h2>
+      <p><strong>What</strong>: short-form summarization and saved reads are performed locally when possible.</p>
+      <p><strong>Why</strong>: this keeps content private and reduces dependence on external services. Any server-side summarization will be an explicit opt-in feature.</p>
+    </section>
+
+    <section class="card">
+      <h2>Security & data handling</h2>
+      <ul>
+        <li>Preferences, saved reads, and stats are stored in <code>chrome.storage.local</code> on the user’s device.</li>
+        <li>No default telemetry or page-content collection is performed.</li>
+        <li>Optional cloud features will be opt-in with clear explanations and consent screens.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Developer notes — trade-offs & rationale</h2>
+      <ul>
+        <li><strong>No remote logging by default</strong>: minimizes user data exposure. However this makes debugging harder — see support for alternatives.</li>
+        <li><strong>Chunked TTS</strong>: long text is chunked to avoid browser speech timeouts and provide better playback control.</li>
+        <li><strong>Overlay highlight</strong>: using an overlay reader avoids modifying site DOM (safer on diverse pages).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>How to give feedback or request features</h2>
+      <p>Open an issue on the GitHub repo or email <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a>. Please include:</p>
+      <ul>
+        <li>Browser and version (Chrome/Edge/Chromium)</li>
+        <li>Extension version (from chrome://extensions)</li>
+        <li>Short reproduction steps</li>
+        <li>Screenshot or screen recording where helpful</li>
+      </ul>
+      <p class="muted">GitHub: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div style="color:#666;text-align:center;font-size:0.95rem">Made by Tonna Agburu · <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a></div>
+  </footer>
+</body>
+</html>
