@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClarityRead — Reading Mode & Dyslexia Support</title>
+  <meta name="description" content="ClarityRead adds dyslexia-friendly fonts, text reflow, high-contrast mode, and read-aloud to any web page. Works locally in your browser." />
+  <style>
+    :root{--accent:#0a66ff;--muted:#666;}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.6;color:#111;margin:0;background:#f7f9fc;}
+    header{background:white;border-bottom:1px solid #e6eefc;padding:22px 20px;display:flex;align-items:center;gap:18px;max-width:1100px;margin:24px auto;border-radius:10px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3aa0ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    .title{font-size:1.25rem;margin:0}
+    main{max-width:1100px;margin:18px auto;padding:20px}
+    .hero{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+    .hero .copy{flex:1 1 420px}
+    h1{margin:0 0 8px;font-size:1.6rem}
+    p.lead{margin:0 0 16px;color:var(--muted)}
+    .install-cta{display:inline-block;background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+    .card{background:white;padding:14px;border-radius:10px;border:1px solid #eef6ff}
+    .screenshot{width:100%;height:200px;background:#eaf4ff;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#537ea6;font-weight:600}
+    footer{max-width:1100px;margin:30px auto 60px;padding:20px;color:#666;text-align:center;font-size:0.95rem}
+    .video{width:100%;max-width:740px;border-radius:8px;overflow:hidden;background:#000}
+    .small{font-size:0.95rem;color:var(--muted)}
+    code{background:#f3f6ff;padding:2px 6px;border-radius:6px;font-family:monospace}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">CR</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <h2 class="title">ClarityRead — Reading Mode & Dyslexia Support</h2>
+      </div>
+      <div class="small">Toggle dyslexia-friendly fonts, reflow text, contrast, and read-aloud — all locally in your browser.</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="copy">
+        <h1>Read the web more comfortably — simple, private, and fast.</h1>
+        <p class="lead">ClarityRead makes long articles and web pages easier to read by applying dyslexia-friendly fonts, reflowing text for narrow screens, offering high-contrast mode, and built-in read-aloud using your browser’s voices. Nothing leaves your device unless you explicitly opt in.</p>
+
+        <div class="meta-links">
+          <!-- Replace the href with your Chrome Web Store URL once published -->
+          <a class="install-cta" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome (Draft link)</a>
+          <a class="install-cta" href="privacy.html" style="background:#fff;color:var(--accent);border:1px solid #dbeeff">Privacy Policy</a>
+          <a class="install-cta" href="support.html" style="background:#fff;color:var(--accent);border:1px solid #dbeeff">Support</a>
+        </div>
+
+        <div style="margin-top:14px" class="small">Store listing ID: <code>hfdofbjebmednjacbkdbgdmjpnmdbddo</code></div>
+      </div>
+
+      <div style="flex:0 0 360px">
+        <div class="screenshot">Screenshot placeholder (replace with 1280×800 or 640×400 PNG/JPEG)</div>
+        <div style="margin-top:10px" class="small">Tip: upload 1–5 screenshots to the Chrome Web Store console. Use images that show the dyslexia font, reflowed layout, and overlay reader.</div>
+      </div>
+    </section>
+
+    <section style="margin-top:26px">
+      <h3 style="margin-top:0">Key features</h3>
+      <div class="features">
+        <div class="card"><strong>Dyslexia font</strong><div class="small">Switch to OpenDyslexic-style font for easier character recognition.</div></div>
+        <div class="card"><strong>Reflow & reader</strong><div class="small">Reformats long articles into a readable column with adjustable font sizes.</div></div>
+        <div class="card"><strong>Read-aloud</strong><div class="small">Uses your browser's speech synthesis — no text is sent externally by default.</div></div>
+        <div class="card"><strong>High contrast</strong><div class="small">Toggle high-contrast and invert modes for better visibility.</div></div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px">
+      <h3>Demo video</h3>
+      <p class="small">Replace the YouTube ID below with your demo video. If you prefer not to embed, remove the iframe and link to YouTube instead.</p>
+      <div class="video" style="margin-top:8px">
+        <!-- Replace YOUR_VIDEO_ID with your YouTube video ID -->
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="ClarityRead demo"></iframe>
+      </div>
+    </section>
+
+    <section style="margin-top:22px">
+      <h3>Where to put these URLs in the Chrome Web Store</h3>
+      <ol>
+        <li><strong>Official URL</strong>: your site root (example: <code>https://yourusername.github.io/clarityread-site/</code>).</li>
+        <li><strong>Homepage URL</strong>: same as Official URL or a page you want people to land on.</li>
+        <li><strong>Support URL</strong>: link to a support page (this site has <code>/support.html</code>).</li>
+      </ol>
+      <p class="small">After you publish the store item, update the install link above to the final Chrome Web Store URL.</p>
+    </section>
+
+    <section style="margin-top:22px">
+      <h3>Screenshots & promo tiles — quick guidance</h3>
+      <ul>
+        <li>Take 1280×800 or 640×400 screenshots showing: main reader overlay, dyslexia font enabled, high contrast mode, and the read-aloud overlay.</li>
+        <li>Small promo tile: 440×280 — create a clean cropped image with the extension name and logo.</li>
+        <li>Marquee promo tile: 1400×560 — large banner for the store listing (use simple text and one screenshot).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div>Made by Tonna Agburu · <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a></div>
+    <div style="margin-top:8px;font-size:0.9rem;color:var(--muted)">Privacy: <a href="privacy.html">Privacy Policy</a> · Support: <a href="support.html">Support</a></div>
+  </footer>
+</body>
+</html>
