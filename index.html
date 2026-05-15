@@ -42,9 +42,18 @@
       </div>
 
       <div class="hero-media">
-        <div class="screenshot">
-          <img src="clarityreadSS.png" alt="ClarityRead screenshot showing the reader overlay" />
-        </div>
+        <figure class="screenshot-showcase" aria-label="ClarityRead reader mode preview">
+          <div class="browser-frame">
+            <div class="browser-chrome" aria-hidden="true">
+              <span class="chrome-dot"></span>
+              <span class="chrome-address">clarityread reader view</span>
+            </div>
+            <div class="screenshot">
+              <img src="clarityreadSS.png" alt="ClarityRead reader overlay with simplified article text and reading controls" width="1359" height="683" decoding="async" />
+            </div>
+          </div>
+          <figcaption>Preview the focused reader overlay: clutter is cleared away while typography, contrast, spacing, and read-aloud controls stay easy to reach.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -148,10 +157,16 @@
       </div>
     </section>
 
-    <section class="section-block" aria-labelledby="demo-video">
-      <h2 id="demo-video">Demo video</h2>
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/kjRNsqQO0W0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="ClarityRead demo"></iframe>
+    <section class="section-block demo-section" aria-labelledby="demo-video">
+      <div class="demo-card">
+        <div class="demo-copy">
+          <p class="eyebrow">See it in action</p>
+          <h2 id="demo-video">Watch ClarityRead turn a busy page into a calmer reading view.</h2>
+          <p class="section-lead">This short demo shows how the extension helps you simplify page layouts, adjust reading comfort, and keep focus on the content that matters.</p>
+        </div>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/kjRNsqQO0W0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="ClarityRead demo video" loading="lazy"></iframe>
+        </div>
       </div>
     </section>
   </main>
