@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Features & Design — ClarityRead</title>
-  <meta name="description" content="Detailed feature list and design decisions for ClarityRead." />
+  <meta name="description" content="See how ClarityRead clears cluttered pages, improves tiny fonts, reduces eye strain, supports focus, and makes long-form reading easier with local, privacy-first tools." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -29,54 +29,56 @@
   <main class="page-container reading-container">
     <section class="page-hero">
       <p class="eyebrow">Features & design</p>
-      <h1>Purpose-built tools for private, comfortable reading.</h1>
-      <p class="lead">A friendly, transparent explanation of what ClarityRead does, why the features exist, and how decisions were made.</p>
+      <h1>Make difficult web pages easier to read immediately.</h1>
+      <p class="lead">ClarityRead is built for the moments when cluttered pages, tiny fonts, eye strain, lost focus, or long-form reading get in your way. These tools help you clean up the page, shape the text, boost visibility, and listen without sending page content to remote servers by default.</p>
     </section>
 
     <section class="card">
       <h2>Core goals</h2>
       <ul>
-        <li><strong>Privacy-first</strong> — processing happens locally in the browser by default; nothing is sent to remote servers unless you explicitly opt in.</li>
-        <li><strong>Readability</strong> — provide dyslexia-friendly fonts, reflow, and adjustable typography so users can read comfortably across devices.</li>
-        <li><strong>Simplicity</strong> — features are focused and discoverable; the UI avoids overwhelming options.</li>
+        <li><strong>Immediate relief</strong> — give readers one-click tools for clutter, tiny fonts, distracting layouts, and difficult long-form pages.</li>
+        <li><strong>Readable by design</strong> — provide dyslexia-friendly typography, reflow, adjustable sizing, and high contrast so text feels easier to follow across devices.</li>
+        <li><strong>Privacy-first</strong> — page content and selections are processed locally in the browser by default; nothing is sent to remote servers unless you explicitly opt in.</li>
+        <li><strong>Simplicity</strong> — keep controls focused and discoverable so readers can fix the page without managing overwhelming settings.</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2>Dyslexia font</h2>
-      <p><strong>What</strong>: an OpenDyslexic-like font and spacing adjustments that make letterforms easier to distinguish.</p>
-      <p><strong>Why</strong>: research and accessibility guidance suggest specialized typefaces and increased letter spacing can help some readers with dyslexia reduce letter confusion. The font is applied locally and users can toggle it off.</p>
+      <h2>Dyslexia-friendly typography</h2>
+      <p><strong>What</strong>: switch to an OpenDyslexic-like font with spacing and sizing adjustments that make letterforms and lines easier to distinguish.</p>
+      <p><strong>Outcome</strong>: when tiny fonts, dense paragraphs, or visual crowding make text hard to track, ClarityRead reshapes the words into a more comfortable reading experience. The font is applied locally and users can toggle it off.</p>
     </section>
 
     <section class="card">
-      <h2>Text reflow & reader overlay</h2>
-      <p><strong>What</strong>: reformat long pages into a narrow readable column, with adjustable font size and line height.</p>
-      <p><strong>Why</strong>: many websites use multi-column layouts, sidebars, or tiny type that make sustained reading difficult. Reflow makes reading comfortable on small screens and reduces visual clutter.</p>
+      <h2>One-click reader mode</h2>
+      <p><strong>What</strong>: reformat long pages into a focused reading column with adjustable font size and line height.</p>
+      <p><strong>Outcome</strong>: sidebars, ads, multi-column layouts, and crowded page chrome stop competing for attention, so sustained reading feels calmer on articles, lessons, documentation, and other long-form pages.</p>
     </section>
 
     <section class="card">
       <h2>High contrast & invert modes</h2>
       <p><strong>What</strong>: toggles to increase contrast and optionally invert colors for better visibility.</p>
-      <p><strong>Why</strong>: users with low vision or light sensitivity can benefit from greater contrast or inverted palettes. These modes are simple CSS transforms applied locally.</p>
+      <p><strong>Outcome</strong>: readers who squint at low-contrast pages or feel eye strain from bright layouts can quickly choose a more legible palette. These modes are simple CSS transforms applied locally.</p>
     </section>
 
     <section class="card">
       <h2>Read-aloud (text-to-speech)</h2>
       <p><strong>What</strong>: uses the browser's Web Speech API to speak selected text or the main article.</p>
-      <p><strong>Why</strong>: audio complements visual reading — helpful for dyslexia, multitasking, or proofreading.</p>
-      <p><strong>Privacy</strong>: by default the browser provides voices locally. If a cloud TTS option is offered in the future it will be opt-in and you’ll be shown what is sent.</p>
+      <p><strong>Outcome</strong>: when your eyes are tired, focus starts to drift, or a long article feels hard to finish visually, you can listen while following along.</p>
+      <p><strong>Privacy</strong>: by default the browser provides voices locally. No audio or text is sent to external services for text-to-speech unless you explicitly enable an optional cloud TTS feature.</p>
     </section>
 
     <section class="card">
       <h2>Local summarizer and saved reads</h2>
       <p><strong>What</strong>: short-form summarization and saved reads are performed locally when possible.</p>
-      <p><strong>Why</strong>: this keeps content private and reduces dependence on external services. Any server-side summarization will be an explicit opt-in feature.</p>
+      <p><strong>Outcome</strong>: quickly regain context on dense material or return to important reading without making remote processing the default. Any server-side summarization will be an explicit opt-in feature.</p>
     </section>
 
     <section class="card">
       <h2>Security & data handling</h2>
       <ul>
         <li>Preferences, saved reads, and stats are stored in <code>chrome.storage.local</code> on the user’s device.</li>
+        <li>Page content and user selections are not sent to any remote server by default.</li>
         <li>No default telemetry or page-content collection is performed.</li>
         <li>Optional cloud features will be opt-in with clear explanations and consent screens.</li>
       </ul>
@@ -89,6 +91,12 @@
         <li><strong>Chunked TTS</strong>: long text is chunked to avoid browser speech timeouts and provide better playback control.</li>
         <li><strong>Overlay highlight</strong>: using an overlay reader avoids modifying site DOM (safer on diverse pages).</li>
       </ul>
+    </section>
+
+    <section class="card">
+      <h2>Install ClarityRead and make every page easier to read.</h2>
+      <p>Stop fighting cluttered layouts, tiny type, and tiring long reads. Add one-click reader mode, dyslexia-friendly typography, high contrast, and read-aloud support to your browser today.</p>
+      <p><a class="button button-primary" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a></p>
     </section>
 
     <section class="card">
