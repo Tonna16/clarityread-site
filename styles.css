@@ -398,7 +398,8 @@ pre {
 
 .benefit-grid,
 .features,
-.card-grid {
+.card-grid,
+.testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
@@ -428,6 +429,56 @@ pre {
 .card h3:first-child,
 .summary-box h2:first-child {
   margin-top: 0;
+}
+
+
+.social-proof {
+  padding: clamp(1.2rem, 3vw, 1.7rem);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.social-proof .section-intro {
+  max-width: 840px;
+}
+
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(10, 102, 255, 0.22);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, rgba(10, 102, 255, 0.12), rgba(124, 58, 237, 0.1));
+  color: var(--color-primary-strong);
+  font-size: 0.94rem;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.testimonial-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  margin: 0;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 1rem;
+  color: var(--color-ink);
+  font-size: clamp(1.02rem, 1rem + 0.25vw, 1.16rem);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.testimonial-card figcaption {
+  margin-top: auto;
+  color: var(--color-muted);
+  font-size: 0.96rem;
+  font-weight: 750;
 }
 
 .benefit-card {
