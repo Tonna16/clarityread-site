@@ -38,7 +38,7 @@
     <section class="card support-form-card" aria-labelledby="support-form-heading">
       <h2 id="support-form-heading">Send a support request</h2>
       <p class="section-lead">Share what happened and how I can help. Required fields are marked with an asterisk.</p>
-      <form class="support-form" action="mailto:ttonnaagburu@gmail.com" method="post" enctype="text/plain">
+      <form class="support-form" action="/api/support" method="post" novalidate>
         <div class="form-field">
           <label for="support-name">Name <span aria-hidden="true">*</span></label>
           <input id="support-name" name="name" type="text" autocomplete="name" required />
@@ -113,5 +113,69 @@
       <a href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install</a>
     </div>
   </footer>
+
+  <script>
+    const supportForm = document.querySelector('.support-form');
+    const supportStatus = document.querySelector('#support-form-status');
+    const supportSubmitButton = supportForm?.querySelector('button[type="submit"]');
+
+    const setSupportStatus = (message, type = 'success') => {
+      supportStatus.textContent = message;
+      supportStatus.dataset.status = type;
+    };
+
+    const markInvalidFields = (errors = {}) => {
+      supportForm.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+        field.removeAttribute('aria-invalid');
+      });
+
+      Object.keys(errors).forEach((fieldName) => {
+        const field = supportForm.elements[fieldName];
+
+        if (field) {
+          field.setAttribute('aria-invalid', 'true');
+        }
+      });
+    };
+
+    supportForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      markInvalidFields();
+
+      if (!supportForm.checkValidity()) {
+        supportForm.reportValidity();
+        setSupportStatus('Please complete every required field with a valid email address.', 'error');
+        return;
+      }
+
+      const payload = Object.fromEntries(new FormData(supportForm));
+      supportSubmitButton.disabled = true;
+      setSupportStatus('Sending your request…', 'pending');
+
+      try {
+        const response = await fetch(supportForm.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          markInvalidFields(result.errors);
+          throw new Error(result.error || 'Unable to send your request.');
+        }
+
+        supportForm.reset();
+        setSupportStatus(result.message || 'Your support request was sent. Please check your email for confirmation.');
+      } catch (error) {
+        setSupportStatus(`${error.message} You can also email ttonnaagburu@gmail.com directly.`, 'error');
+      } finally {
+        supportSubmitButton.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
