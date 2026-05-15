@@ -1,4 +1,4 @@
-const SUPPORT_TO = process.env.SUPPORT_TO || 'ttonnaagburu@gmail.com';
+const SUPPORT_TO = process.env.SUPPORT_TO || 'clarityread.support@gmail.com';
 const RESEND_API_URL = 'https://api.resend.com/emails';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_FIELD_LENGTHS = {
