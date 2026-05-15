@@ -4,6 +4,6 @@
   "private": true,
   "description": "Static website and serverless support endpoint for ClarityRead.",
   "scripts": {
-    "test": "node --check netlify/functions/support.js"
+    "test": "node --check support.js && node --check netlify/functions/support.js"
   }
 }
