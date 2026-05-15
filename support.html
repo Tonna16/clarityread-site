@@ -35,6 +35,37 @@
       <p class="lead">If you have a bug, feature request, or need help, please use one of the channels below.</p>
     </section>
 
+    <section class="card support-form-card" aria-labelledby="support-form-heading">
+      <h2 id="support-form-heading">Send a support request</h2>
+      <p class="section-lead">Share what happened and how I can help. Required fields are marked with an asterisk.</p>
+      <form class="support-form" action="mailto:ttonnaagburu@gmail.com" method="post" enctype="text/plain">
+        <div class="form-field">
+          <label for="support-name">Name <span aria-hidden="true">*</span></label>
+          <input id="support-name" name="name" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="form-field">
+          <label for="support-email">Email <span aria-hidden="true">*</span></label>
+          <input id="support-email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="form-field">
+          <label for="support-subject">Subject <span aria-hidden="true">*</span></label>
+          <input id="support-subject" name="subject" type="text" autocomplete="off" required />
+        </div>
+
+        <div class="form-field">
+          <label for="support-message">Support request <span aria-hidden="true">*</span></label>
+          <textarea id="support-message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="button button-primary" type="submit">Send request</button>
+          <p id="support-form-status" class="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
     <section class="card">
       <h2>Email</h2>
       <p>For direct support, contact me at <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a>. Please include your browser (Chrome/Edge), extension version, and a short description of the issue.</p>
