@@ -5,85 +5,85 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ClarityRead — Reading Mode & Dyslexia Support</title>
   <meta name="description" content="ClarityRead adds dyslexia-friendly fonts, text reflow, high-contrast mode, and read-aloud to any web page. Works locally in your browser." />
-  <style>
-    :root{--accent:#0a66ff;--accent-dark:#064fc8;--muted:#596579;--ink:#111827;--panel:#ffffff;--ring:#dbeafe;}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.6;color:var(--ink);margin:0;background:linear-gradient(180deg,#f7f9fc 0%,#eef5ff 100%);}
-    header{background:rgba(255,255,255,0.92);border:1px solid #e6eefc;padding:22px 20px;display:flex;align-items:center;gap:18px;max-width:1100px;margin:24px auto;border-radius:16px;box-shadow:0 12px 32px rgba(10,102,255,0.08)}
-    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3aa0ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
-    .title{font-size:1.25rem;margin:0}
-    main{max-width:1100px;margin:18px auto;padding:20px}
-    .hero{display:flex;gap:44px;flex-wrap:wrap;align-items:center;background:var(--panel);border:1px solid #e6eefc;border-radius:24px;padding:48px;box-shadow:0 24px 60px rgba(31,72,126,0.12)}
-    .hero .copy{flex:1 1 500px}
-    h1{margin:0 0 18px;font-size:clamp(2.6rem,6vw,4.8rem);line-height:0.98;letter-spacing:-0.06em;font-weight:800;color:#07111f;max-width:850px}
-    p.lead{margin:0 0 28px;color:var(--muted);font-size:1.22rem;line-height:1.7;max-width:720px}
-    .meta-links{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-    .install-cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:white;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:700;margin-right:0;box-shadow:0 10px 20px rgba(10,102,255,0.22);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
-    .install-cta:hover{background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 14px 26px rgba(10,102,255,0.26)}
-    .secondary-cta{background:#fff;color:var(--accent);border:1px solid var(--ring);box-shadow:none}
-    .secondary-cta:hover{background:#f8fbff;color:var(--accent-dark);box-shadow:0 8px 18px rgba(31,72,126,0.08)}
-    .trust-copy{margin-top:18px;color:#475569;font-size:0.98rem;font-weight:650}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
-    .card{background:white;padding:14px;border-radius:10px;border:1px solid #eef6ff}
-    .screenshot{width:100%;height:200px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#537ea6;font-weight:600;overflow:hidden;background:#eaf4ff}
-    .screenshot img{width:100%;height:100%;object-fit:cover;display:block}
-    footer{max-width:1100px;margin:30px auto 60px;padding:20px;color:#666;text-align:center;font-size:0.95rem}
-    .video{width:100%;max-width:740px;border-radius:8px;overflow:hidden;background:#000}
-    .small{font-size:0.95rem;color:var(--muted)}
-    code{background:#f3f6ff;padding:2px 6px;border-radius:6px;font-family:monospace}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-      <img src="icon128.png" alt="ClarityRead" class="logo">
-    <div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <h2 class="title">ClarityRead — Reading Mode & Dyslexia Support</h2>
-      </div>
-      <div class="small">Toggle dyslexia-friendly fonts, reflow text, contrast, and read-aloud — all locally in your browser.</div>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="ClarityRead homepage">
+      <img src="icon128.png" alt="ClarityRead" class="logo" />
+      <span>
+        <span class="brand-title">ClarityRead</span>
+        <span class="brand-subtitle">Reading Mode & Dyslexia Support</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="features.html">Features</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </header>
 
-  <main>
+  <main class="page-container">
     <section class="hero">
-      <div class="copy">
+      <div class="hero-copy">
+        <p class="eyebrow">Private by default · Built for calmer reading</p>
         <h1>Turn cluttered web pages into calm, readable text in one click.</h1>
         <p class="lead">ClarityRead helps you read with less friction: accessible dyslexia-friendly fonts, focus-first page cleanup, private local controls, and instant reader tools that keep pace with your browsing.</p>
 
-        <div class="meta-links">
-          <a class="install-cta" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a>
-          <a class="install-cta secondary-cta" href="features.html">See features</a>
+        <div class="button-row">
+          <a class="button button-primary" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a>
+          <a class="button button-secondary" href="features.html">See features</a>
         </div>
 
-        <div class="trust-copy">Private by default · Works instantly · Built for dyslexia-friendly reading</div>
+        <div class="trust-copy">Works instantly · No page content sent by default · Dyslexia-friendly controls</div>
       </div>
 
-      <div style="flex:0 0 360px">
+      <div class="hero-media">
         <div class="screenshot">
-          <img src="clarityreadSS.png" alt="ClarityRead screenshot (reader overlay)">
+          <img src="clarityreadSS.png" alt="ClarityRead screenshot showing the reader overlay" />
         </div>
       </div>
     </section>
 
-    <section style="margin-top:26px">
-      <h3 style="margin-top:0">Key features</h3>
+    <section class="section-block" aria-labelledby="key-features">
+      <h2 id="key-features">Key features</h2>
       <div class="features">
-        <div class="card"><strong>Dyslexia font</strong><div class="small">Switch to OpenDyslexic-style font for easier character recognition.</div></div>
-        <div class="card"><strong>Reflow & reader</strong><div class="small">Reformats long articles into a readable column with adjustable font sizes.</div></div>
-        <div class="card"><strong>Read-aloud</strong><div class="small">Uses your browser's speech synthesis — no text is sent externally by default.</div></div>
-        <div class="card"><strong>High contrast</strong><div class="small">Toggle high-contrast and invert modes for better visibility.</div></div>
+        <div class="card">
+          <h3>Dyslexia font</h3>
+          <p class="small">Switch to an OpenDyslexic-style font for easier character recognition.</p>
+        </div>
+        <div class="card">
+          <h3>Reflow & reader</h3>
+          <p class="small">Reformats long articles into a readable column with adjustable font sizes.</p>
+        </div>
+        <div class="card">
+          <h3>Read-aloud</h3>
+          <p class="small">Uses your browser's speech synthesis — no text is sent externally by default.</p>
+        </div>
+        <div class="card">
+          <h3>High contrast</h3>
+          <p class="small">Toggle high-contrast and invert modes for better visibility.</p>
+        </div>
       </div>
     </section>
 
-    <section style="margin-top:22px">
-      <h3>Demo video</h3>
-      <div class="video" style="margin-top:8px">
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/kjRNsqQO0W0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="ClarityRead demo"></iframe>
+    <section class="section-block" aria-labelledby="demo-video">
+      <h2 id="demo-video">Demo video</h2>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/kjRNsqQO0W0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="ClarityRead demo"></iframe>
       </div>
     </section>
+  </main>
 
-  <footer>
+  <footer class="site-footer">
     <div>Made by Tonna Agburu · <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a></div>
-    <div style="margin-top:8px;font-size:0.9rem;color:var(--muted)">Privacy: <a href="privacy.html">Privacy Policy</a> · Support: <a href="support.html">Support</a></div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="ToS.html">Terms</a>
+    </div>
   </footer>
 </body>
 </html>

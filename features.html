@@ -5,21 +5,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Features & Design — ClarityRead</title>
   <meta name="description" content="Detailed feature list and design decisions for ClarityRead." />
-  <style>
-    body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;margin:0;background:#fbfcff;color:#111}
-    main{max-width:920px;margin:36px auto;padding:22px}
-    h1{margin:0 0 8px}
-    .card{background:white;border:1px solid #e9f0ff;padding:18px;border-radius:10px;margin-top:14px}
-    footer{max-width:920px;margin:30px auto 60px;padding:20px;color:#666;text-align:center;font-size:0.95rem}
-    pre{background:#f6f9ff;padding:12px;border-radius:8px;overflow:auto}
-    .muted{color:#666;font-size:0.95rem}
-    ul{padding-left:20px}
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Features & design decisions</h1>
-    <p class="muted">A friendly, transparent explanation of what ClarityRead does, why the features exist, and how decisions were made.</p>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="ClarityRead homepage">
+      <img src="icon128.png" alt="ClarityRead" class="logo" />
+      <span>
+        <span class="brand-title">ClarityRead</span>
+        <span class="brand-subtitle">Reading Mode & Dyslexia Support</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="features.html" aria-current="page">Features</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main class="page-container reading-container">
+    <section class="page-hero">
+      <p class="eyebrow">Features & design</p>
+      <h1>Purpose-built tools for private, comfortable reading.</h1>
+      <p class="lead">A friendly, transparent explanation of what ClarityRead does, why the features exist, and how decisions were made.</p>
+    </section>
 
     <section class="card">
       <h2>Core goals</h2>
@@ -90,13 +100,16 @@
       </ul>
       <p class="muted">GitHub: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p>
     </section>
-
   </main>
 
-  <footer>
-    <div style="color:#666;text-align:center;font-size:0.95rem">Made by Tonna Agburu · <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a></div>
-          <div style="margin-top:8px;font-size:0.9rem;color:var(--muted)">Homepage: <a href="index.html">Homepage</a>
-
+  <footer class="site-footer">
+    <div>Made by Tonna Agburu · <a href="mailto:ttonnaagburu@gmail.com">ttonnaagburu@gmail.com</a></div>
+    <div class="footer-links">
+      <a href="index.html">Homepage</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="ToS.html">Terms</a>
+    </div>
   </footer>
 </body>
 </html>
