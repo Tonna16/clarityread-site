@@ -413,6 +413,8 @@ pre {
   padding: 0.78rem 1.15rem;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
+  cursor: pointer;
+  font: inherit;
   font-weight: 800;
   overflow: hidden;
   line-height: 1;
@@ -882,6 +884,24 @@ form label {
   font-weight: 750;
 }
 
+.support-form-card h2 {
+  margin-top: 0;
+}
+
+.support-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  margin-top: 0;
+}
 
 input,
 textarea {
@@ -893,13 +913,65 @@ textarea {
   background: rgba(255, 255, 255, 0.86);
   color: var(--color-text);
   font: inherit;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.form-field input,
+.form-field textarea {
+  margin-top: 0;
+}
+
+textarea {
+  min-height: 11rem;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-subtle);
 }
 
 input:focus,
 textarea:focus {
   outline: 3px solid rgba(10, 102, 255, 0.16);
   border-color: var(--color-primary);
-  
+  background: var(--color-surface-solid);
+}
+
+input:required:user-invalid,
+textarea:required:user-invalid,
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+input:required:user-valid,
+textarea:required:user-valid {
+  border-color: rgba(22, 163, 74, 0.48);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.form-status {
+  min-height: 1.55em;
+  margin: 0;
+  color: #15803d;
+  font-size: 0.98rem;
+  font-weight: 750;
+}
+
+.form-status:not(:empty) {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(22, 163, 74, 0.24);
+  border-radius: var(--radius-sm);
+  background: rgba(22, 163, 74, 0.1);
 }
 
 .form-status[data-status="pending"] {
