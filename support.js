@@ -3,7 +3,9 @@ const supportStatus = document.querySelector('#support-form-status');
 const supportSubmitButton = supportForm?.querySelector('button[type="submit"]');
 const fallbackEmail = 'ttonnaagburu@gmail.com';
 const successMessage = 'Your message was sent. I’ll reply within 48 hours.';
+const configurationMessage = `Support form is not configured yet. Please email ${fallbackEmail} directly.`;
 const failureMessage = `Unable to send your message. Please email ${fallbackEmail} directly.`;
+const emailjsPlaceholderPattern = /^(YOUR_|REPLACE_)/i;
 
 const setSupportStatus = (message, type = 'success') => {
   if (!supportStatus) {
@@ -14,7 +16,7 @@ const setSupportStatus = (message, type = 'success') => {
   supportStatus.dataset.status = type;
 };
 
-const markInvalidFields = (errors = {}) => {
+const markInvalidFields = () => {
   if (!supportForm) {
     return;
   }
@@ -22,24 +24,30 @@ const markInvalidFields = (errors = {}) => {
   supportForm.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
     field.removeAttribute('aria-invalid');
   });
-
-  Object.keys(errors).forEach((fieldName) => {
-    const field = supportForm.elements[fieldName];
-
-    if (field) {
-      field.setAttribute('aria-invalid', 'true');
-    }
-  });
 };
 
-const parseResponse = async (response) => {
-  const contentType = response.headers.get('content-type') || '';
-
-  if (contentType.includes('application/json')) {
-    return response.json();
+const getEmailjsConfig = () => {
+  if (!supportForm) {
+    return null;
   }
 
-  return {};
+  const config = {
+    publicKey: supportForm.dataset.emailjsPublicKey?.trim(),
+    serviceId: supportForm.dataset.emailjsServiceId?.trim(),
+    templateId: supportForm.dataset.emailjsTemplateId?.trim(),
+  };
+
+  const hasMissingValue = Object.values(config).some((value) => !value || emailjsPlaceholderPattern.test(value));
+
+  return hasMissingValue ? null : config;
+};
+
+const getEmailjsClient = () => {
+  if (!window.emailjs || typeof window.emailjs.sendForm !== 'function') {
+    return null;
+  }
+
+  return window.emailjs;
 };
 
 supportForm?.addEventListener('submit', async (event) => {
@@ -52,7 +60,13 @@ supportForm?.addEventListener('submit', async (event) => {
     return;
   }
 
-  const payload = Object.fromEntries(new FormData(supportForm));
+  const emailjsClient = getEmailjsClient();
+  const emailjsConfig = getEmailjsConfig();
+
+  if (!emailjsClient || !emailjsConfig) {
+    setSupportStatus(`Error: ${configurationMessage}`, 'error');
+    return;
+  }
 
   if (supportSubmitButton) {
     supportSubmitButton.disabled = true;
@@ -62,20 +76,9 @@ supportForm?.addEventListener('submit', async (event) => {
   setSupportStatus('Sending your request…', 'pending');
 
   try {
-    const response = await fetch(supportForm.action, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(payload),
+    await emailjsClient.sendForm(emailjsConfig.serviceId, emailjsConfig.templateId, supportForm, {
+      publicKey: emailjsConfig.publicKey,
     });
-    const result = await parseResponse(response);
-
-    if (!response.ok || !result.success) {
-      markInvalidFields(result.errors);
-      throw new Error(result.error || failureMessage);
-    }
 
     supportForm.reset();
     setSupportStatus(successMessage);

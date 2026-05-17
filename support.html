@@ -38,7 +38,13 @@
     <section class="card support-form-card" aria-labelledby="support-form-heading">
       <h2 id="support-form-heading">Send a support request</h2>
       <p class="section-lead">Share what happened and how I can help. Required fields are marked with an asterisk.</p>
-      <form class="support-form" action="/api/support" method="post" novalidate>
+      <form
+        class="support-form"
+        data-emailjs-public-key="YOUR_EMAILJS_PUBLIC_KEY"
+        data-emailjs-service-id="YOUR_EMAILJS_SERVICE_ID"
+        data-emailjs-template-id="YOUR_EMAILJS_TEMPLATE_ID"
+        novalidate
+      >
         <div class="form-field">
           <label for="support-name">Name <span aria-hidden="true">*</span></label>
           <input id="support-name" name="name" type="text" autocomplete="name" required />
@@ -114,6 +120,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="support.js"></script>
 </body>
 </html>

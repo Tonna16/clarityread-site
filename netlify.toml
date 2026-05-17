@@ -1,7 +1,0 @@
-[functions]
-  node_bundler = "esbuild"
-
-[[redirects]]
-  from = "/api/support"
-  to = "/.netlify/functions/support"
-  status = 200
