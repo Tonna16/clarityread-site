@@ -1,11 +1,14 @@
 const supportForm = document.querySelector('.support-form');
 const supportStatus = document.querySelector('#support-form-status');
 const supportSubmitButton = supportForm?.querySelector('button[type="submit"]');
+const supportScriptVersion = '2026-05-17-emailjs-send';
 const supportEmail = 'clarityread.support@gmail.com';
 const successMessage = 'Your message was sent. I’ll reply within 48 hours.';
 const configurationMessage = `Support form is not configured yet. Please email ${supportEmail} directly.`;
 const failureMessage = `Unable to send your message. Please email ${supportEmail} directly.`;
 const emailjsPlaceholderPattern = /^(YOUR_|REPLACE_)/i;
+
+console.info(`ClarityRead support form loaded (${supportScriptVersion}).`);
 
 const setSupportStatus = (message, type = 'success') => {
   if (!supportStatus) {
