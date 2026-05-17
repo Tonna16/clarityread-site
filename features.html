@@ -28,88 +28,93 @@
     </nav>
   </header>
 
-  <main class="page-container reading-container">
-    <section class="page-hero">
-      <p class="eyebrow">Features & design</p>
-      <h1>Make difficult web pages easier to read immediately.</h1>
-      <p class="lead">ClarityRead is built for the moments when cluttered pages, tiny fonts, eye strain, lost focus, or long-form reading get in your way. These tools help you clean up the page, shape the text, boost visibility, and listen without sending page content to remote servers by default.</p>
+  <main class="page-container premium-page-container">
+    <section class="page-hero page-hero-premium split-hero">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="premium-hero-copy">
+        <p class="eyebrow hero-kicker">Features & design · Built for calm reading</p>
+        <h1>Every control is tuned to make difficult web pages feel effortless.</h1>
+        <p class="lead">ClarityRead is built for the moments when cluttered pages, tiny fonts, eye strain, lost focus, or long-form reading get in your way. Clean the page, shape the text, boost visibility, and listen along without sending page content to remote servers by default.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a>
+          <a class="button button-secondary" href="#feature-suite">Explore the suite</a>
+        </div>
+      </div>
+      <aside class="premium-hero-panel" aria-label="Feature highlights">
+        <div class="panel-stat"><strong>1-click</strong><span>reader mode</span></div>
+        <div class="panel-stat"><strong>Local</strong><span>privacy-first processing</span></div>
+        <div class="panel-stat"><strong>Aa</strong><span>typography controls</span></div>
+      </aside>
     </section>
 
-    <section class="card">
-      <h2>Core goals</h2>
-      <ul>
-        <li><strong>Immediate relief</strong> — give readers one-click tools for clutter, tiny fonts, distracting layouts, and difficult long-form pages.</li>
-        <li><strong>Readable by design</strong> — provide dyslexia-friendly typography, reflow, adjustable sizing, and high contrast so text feels easier to follow across devices.</li>
-        <li><strong>Privacy-first</strong> — page content and selections are processed locally in the browser by default; nothing is sent to remote servers unless you explicitly opt in.</li>
-        <li><strong>Simplicity</strong> — keep controls focused and discoverable so readers can fix the page without managing overwhelming settings.</li>
+    <section class="momentum-strip" aria-label="Feature categories">
+      <div class="momentum-track">
+        <span>Dyslexia-friendly type</span>
+        <span>High contrast</span>
+        <span>Reader mode</span>
+        <span>Read aloud</span>
+        <span>Saved reads</span>
+        <span>Local by default</span>
+        <span>Dyslexia-friendly type</span>
+        <span>High contrast</span>
+      </div>
+    </section>
+
+    <section class="section-block transformation-section" aria-labelledby="core-goals">
+      <div class="section-intro">
+        <p class="eyebrow">Product principles</p>
+        <h2 id="core-goals">A polished reading workflow, not a pile of settings.</h2>
+        <p class="section-lead">The feature set is intentionally focused: fast relief, readable defaults, privacy-first behavior, and controls that stay discoverable.</p>
+      </div>
+      <div class="premium-card-grid four-up">
+        <article class="card feature-card-pro"><span class="feature-spark">01</span><h3>Immediate relief</h3><p>One-click tools for clutter, tiny fonts, distracting layouts, and difficult long-form pages.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">02</span><h3>Readable by design</h3><p>Dyslexia-friendly typography, reflow, sizing, spacing, and high contrast help text feel easier to follow.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">03</span><h3>Private by default</h3><p>Page content and selections are processed locally in the browser unless you explicitly opt in.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">04</span><h3>Simple controls</h3><p>Clean, focused controls help readers fix the page without managing overwhelming settings.</p></article>
+      </div>
+    </section>
+
+    <section id="feature-suite" class="section-block" aria-labelledby="feature-suite-heading">
+      <div class="section-intro">
+        <p class="eyebrow">Feature suite</p>
+        <h2 id="feature-suite-heading">Premium tools for the parts of reading that usually hurt.</h2>
+      </div>
+      <div class="premium-card-grid">
+        <article class="card feature-card-pro"><span class="feature-spark">Aa</span><h2>Dyslexia-friendly typography</h2><p><strong>What:</strong> switch to an OpenDyslexic-like font with spacing and sizing adjustments that make letterforms and lines easier to distinguish.</p><p><strong>Outcome:</strong> dense paragraphs and visual crowding become more comfortable to track, and users can toggle the font off any time.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">✦</span><h2>One-click reader mode</h2><p><strong>What:</strong> reformat long pages into a focused reading column with adjustable font size and line height.</p><p><strong>Outcome:</strong> sidebars, ads, multi-column layouts, and crowded page chrome stop competing for attention.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">◐</span><h2>High contrast & invert modes</h2><p><strong>What:</strong> toggles increase contrast and optionally invert colors for better visibility.</p><p><strong>Outcome:</strong> low-contrast pages and bright layouts become easier to read with local CSS-based modes.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">▶</span><h2>Read-aloud</h2><p><strong>What:</strong> uses the browser's Web Speech API to speak selected text or the main article.</p><p><strong>Outcome:</strong> listen while following along when your eyes are tired or focus starts to drift.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">✓</span><h2>Local summarizer and saved reads</h2><p><strong>What:</strong> short-form summarization and saved reads are performed locally when possible.</p><p><strong>Outcome:</strong> regain context on dense material or return to important reading without making remote processing the default.</p></article>
+        <article class="card feature-card-pro"><span class="feature-spark">🔒</span><h2>Security & data handling</h2><ul><li>Preferences, saved reads, and stats are stored in <code>chrome.storage.local</code>.</li><li>Page content and selections are not sent to remote servers by default.</li><li>Optional cloud features will be opt-in with clear consent screens.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section-block trust-section premium-trust-section">
+      <div>
+        <p class="eyebrow">Engineering rationale</p>
+        <h2>Designed carefully for privacy, stability, and real-world pages.</h2>
+        <p>No remote logging by default minimizes data exposure, chunked TTS avoids browser speech timeouts, and the overlay reader avoids risky site DOM changes.</p>
+      </div>
+      <ul class="trust-list">
+        <li>Local-first defaults</li>
+        <li>Safer overlay reader</li>
+        <li>Clear opt-in boundaries</li>
       </ul>
     </section>
 
-    <section class="card">
-      <h2>Dyslexia-friendly typography</h2>
-      <p><strong>What</strong>: switch to an OpenDyslexic-like font with spacing and sizing adjustments that make letterforms and lines easier to distinguish.</p>
-      <p><strong>Outcome</strong>: when tiny fonts, dense paragraphs, or visual crowding make text hard to track, ClarityRead reshapes the words into a more comfortable reading experience. The font is applied locally and users can toggle it off.</p>
+    <section class="cta-band">
+      <div>
+        <p class="eyebrow">Ready when the page is not</p>
+        <h2>Install ClarityRead and make every page easier to read.</h2>
+        <p class="section-lead">Stop fighting cluttered layouts, tiny type, and tiring long reads. Add focused reader mode, dyslexia-friendly typography, high contrast, and read-aloud support today.</p>
+      </div>
+      <a class="button button-primary" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a>
     </section>
 
-    <section class="card">
-      <h2>One-click reader mode</h2>
-      <p><strong>What</strong>: reformat long pages into a focused reading column with adjustable font size and line height.</p>
-      <p><strong>Outcome</strong>: sidebars, ads, multi-column layouts, and crowded page chrome stop competing for attention, so sustained reading feels calmer on articles, lessons, documentation, and other long-form pages.</p>
-    </section>
-
-    <section class="card">
-      <h2>High contrast & invert modes</h2>
-      <p><strong>What</strong>: toggles to increase contrast and optionally invert colors for better visibility.</p>
-      <p><strong>Outcome</strong>: readers who squint at low-contrast pages or feel eye strain from bright layouts can quickly choose a more legible palette. These modes are simple CSS transforms applied locally.</p>
-    </section>
-
-    <section class="card">
-      <h2>Read-aloud (text-to-speech)</h2>
-      <p><strong>What</strong>: uses the browser's Web Speech API to speak selected text or the main article.</p>
-      <p><strong>Outcome</strong>: when your eyes are tired, focus starts to drift, or a long article feels hard to finish visually, you can listen while following along.</p>
-      <p><strong>Privacy</strong>: by default the browser provides voices locally. No audio or text is sent to external services for text-to-speech unless you explicitly enable an optional cloud TTS feature.</p>
-    </section>
-
-    <section class="card">
-      <h2>Local summarizer and saved reads</h2>
-      <p><strong>What</strong>: short-form summarization and saved reads are performed locally when possible.</p>
-      <p><strong>Outcome</strong>: quickly regain context on dense material or return to important reading without making remote processing the default. Any server-side summarization will be an explicit opt-in feature.</p>
-    </section>
-
-    <section class="card">
-      <h2>Security & data handling</h2>
-      <ul>
-        <li>Preferences, saved reads, and stats are stored in <code>chrome.storage.local</code> on the user’s device.</li>
-        <li>Page content and user selections are not sent to any remote server by default.</li>
-        <li>No default telemetry or page-content collection is performed.</li>
-        <li>Optional cloud features will be opt-in with clear explanations and consent screens.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Developer notes — trade-offs & rationale</h2>
-      <ul>
-        <li><strong>No remote logging by default</strong>: minimizes user data exposure. However this makes debugging harder — see support for alternatives.</li>
-        <li><strong>Chunked TTS</strong>: long text is chunked to avoid browser speech timeouts and provide better playback control.</li>
-        <li><strong>Overlay highlight</strong>: using an overlay reader avoids modifying site DOM (safer on diverse pages).</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Install ClarityRead and make every page easier to read.</h2>
-      <p>Stop fighting cluttered layouts, tiny type, and tiring long reads. Add one-click reader mode, dyslexia-friendly typography, high contrast, and read-aloud support to your browser today.</p>
-      <p><a class="button button-primary" href="https://chrome.google.com/webstore/detail/hfdofbjebmednjacbkdbgdmjpnmdbddo" target="_blank" rel="noopener noreferrer">Install on Chrome</a></p>
-    </section>
-
-    <section class="card">
+    <section class="section-block card feedback-card">
       <h2>How to give feedback or request features</h2>
-      <p>Open an issue on the GitHub repo or email <a href="mailto:clarityread.support@gmail.com">clarityread.support@gmail.com</a>. Please include:</p>
-      <ul>
-        <li>Browser and version (Chrome/Edge/Chromium)</li>
-        <li>Extension version (from chrome://extensions)</li>
-        <li>Short reproduction steps</li>
-        <li>Screenshot or screen recording where helpful</li>
-      </ul>
+      <p>Open an issue on the GitHub repo or email <a href="mailto:clarityread.support@gmail.com">clarityread.support@gmail.com</a>. Include your browser/version, extension version, reproduction steps, and screenshots or recordings where helpful.</p>
       <p class="muted">GitHub: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p>
     </section>
   </main>

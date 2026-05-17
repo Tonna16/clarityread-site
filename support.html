@@ -28,83 +28,56 @@
     </nav>
   </header>
 
-  <main class="page-container reading-container">
-    <section class="page-hero">
-      <p class="eyebrow">Support & contact</p>
-      <h1>Get help with ClarityRead.</h1>
-      <p class="lead">If you have a bug, feature request, or need help, please use one of the channels below.</p>
-    </section>
-
-    <section class="card support-form-card" aria-labelledby="support-form-heading">
-      <h2 id="support-form-heading">Send a support request</h2>
-      <p class="section-lead">Share what happened and how I can help. Required fields are marked with an asterisk.</p>
-      <form
-        class="support-form"
-        data-emailjs-public-key="3nmkli3qVj1SNjosw"
-        data-emailjs-service-id="service_6mdxvno"
-        data-emailjs-template-id="template_ez88kz5"
-        novalidate
-      >
-        <div class="form-field">
-          <label for="support-name">Name <span aria-hidden="true">*</span></label>
-          <input id="support-name" name="name" type="text" autocomplete="name" required />
+  <main class="page-container premium-page-container">
+    <section class="page-hero page-hero-premium split-hero">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="premium-hero-copy">
+        <p class="eyebrow hero-kicker">Support & contact · Fast help, privacy-first</p>
+        <h1>Get help without sacrificing clarity or privacy.</h1>
+        <p class="lead">Send a polished support request, report an issue, or follow quick troubleshooting steps. Share only what is useful: reproduction details, screenshots when helpful, and no private page content unless you choose to include it.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="#support-form-heading">Send request</a>
+          <a class="button button-secondary" href="https://github.com/Tonna16/ClarityRead/issues" target="_blank" rel="noopener noreferrer">Open GitHub Issue</a>
         </div>
-
-        <div class="form-field">
-          <label for="support-email">Email <span aria-hidden="true">*</span></label>
-          <input id="support-email" name="email" type="email" autocomplete="email" required />
-        </div>
-
-        <div class="form-field">
-          <label for="support-subject">Subject <span aria-hidden="true">*</span></label>
-          <input id="support-subject" name="subject" type="text" autocomplete="off" required />
-        </div>
-
-        <div class="form-field">
-          <label for="support-message">Support request <span aria-hidden="true">*</span></label>
-          <textarea id="support-message" name="message" rows="6" required></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button class="button button-primary" type="submit">Send request</button>
-          <p id="support-form-status" class="form-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
+      </div>
+      <aside class="premium-hero-panel" aria-label="Support highlights">
+        <div class="panel-stat"><strong>Email</strong><span>direct support</span></div>
+        <div class="panel-stat"><strong>GitHub</strong><span>tracked issues</span></div>
+        <div class="panel-stat"><strong>Private</strong><span>diagnostics by design</span></div>
+      </aside>
     </section>
 
-    <section class="card">
-      <h2>Email</h2>
-      <p>For direct support, contact me at <a href="mailto:clarityread.support@gmail.com">clarityread.support@gmail.com</a>. Please include your browser (Chrome/Edge), extension version, and a short description of the issue.</p>
+    <section class="momentum-strip" aria-label="Support topics">
+      <div class="momentum-track">
+        <span>Bug reports</span><span>Feature requests</span><span>Diagnostics</span><span>Privacy-first help</span><span>Troubleshooting</span><span>GitHub issues</span><span>Bug reports</span><span>Feature requests</span>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Report an issue (recommended)</h2>
-      <p>If you use GitHub, open an issue on the repository so I can track and respond:</p>
-      <p><a class="button button-primary" href="https://github.com/Tonna16/ClarityRead/issues" target="_blank" rel="noopener noreferrer">Open GitHub Issue</a></p>
+    <section class="section-block support-layout">
+      <section class="card support-form-card premium-form-card" aria-labelledby="support-form-heading">
+        <p class="eyebrow">Concierge-style request</p>
+        <h2 id="support-form-heading">Send a support request</h2>
+        <p class="section-lead">Share what happened and how I can help. Required fields are marked with an asterisk.</p>
+        <form class="support-form" data-emailjs-public-key="3nmkli3qVj1SNjosw" data-emailjs-service-id="service_6mdxvno" data-emailjs-template-id="template_ez88kz5" novalidate>
+          <div class="form-field"><label for="support-name">Name <span aria-hidden="true">*</span></label><input id="support-name" name="name" type="text" autocomplete="name" required /></div>
+          <div class="form-field"><label for="support-email">Email <span aria-hidden="true">*</span></label><input id="support-email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="form-field"><label for="support-subject">Subject <span aria-hidden="true">*</span></label><input id="support-subject" name="subject" type="text" autocomplete="off" required /></div>
+          <div class="form-field"><label for="support-message">Support request <span aria-hidden="true">*</span></label><textarea id="support-message" name="message" rows="6" required></textarea></div>
+          <div class="form-actions"><button class="button button-primary" type="submit">Send request</button><p id="support-form-status" class="form-status" role="status" aria-live="polite"></p></div>
+        </form>
+      </section>
+
+      <aside class="support-side-stack" aria-label="Support options">
+        <section class="card feature-card-pro"><span class="feature-spark">@</span><h2>Email</h2><p>Contact <a href="mailto:clarityread.support@gmail.com">clarityread.support@gmail.com</a>. Include browser, extension version, and a short issue summary.</p></section>
+        <section class="card feature-card-pro"><span class="feature-spark">GH</span><h2>Report an issue</h2><p>If you use GitHub, open an issue so I can track and respond.</p><p><a class="button button-primary" href="https://github.com/Tonna16/ClarityRead/issues" target="_blank" rel="noopener noreferrer">Open GitHub Issue</a></p></section>
+      </aside>
     </section>
 
-    <section class="card">
-      <h2>Quick troubleshooting</h2>
-      <ul>
-        <li>Ensure the extension is enabled in <code>chrome://extensions</code>.</li>
-        <li>Try disabling other reader or accessibility extensions — they may conflict.</li>
-        <li>If read-aloud fails, check your browser's speech voices and permissions.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Debugging & diagnostics (privacy-first)</h2>
-      <p class="note">I’ve disabled automatic console logs by default to protect privacy. If you run into a problem, use these safe options to help me debug without sending page content.</p>
-      <ul>
-        <li><strong>Reproduction steps</strong> — list exactly: site URL, steps you took, what you expected, and what happened. This is often enough to fix many issues.</li>
-        <li><strong>Screenshots</strong> — a screenshot of the problem and the extension UI is often the fastest way to debug.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Where I’m tracking issues</h2>
-      <p class="muted">Primary repo: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p>
-      <p class="muted">Site repo: <a href="https://github.com/Tonna16/clarityread-site" target="_blank" rel="noopener noreferrer">Tonna16 / clarityread-site</a></p>
+    <section class="section-block premium-card-grid">
+      <article class="card feature-card-pro"><span class="feature-spark">✓</span><h2>Quick troubleshooting</h2><ul><li>Ensure the extension is enabled in <code>chrome://extensions</code>.</li><li>Try disabling other reader or accessibility extensions that may conflict.</li><li>If read-aloud fails, check browser speech voices and permissions.</li></ul></article>
+      <article class="card feature-card-pro"><span class="feature-spark">🔒</span><h2>Privacy-first diagnostics</h2><p class="note">Automatic console logs are disabled by default to protect privacy.</p><ul><li><strong>Reproduction steps</strong> — include URL, steps, expected result, and actual result.</li><li><strong>Screenshots</strong> — capture the problem and extension UI when helpful.</li></ul></article>
+      <article class="card feature-card-pro"><span class="feature-spark">↗</span><h2>Where issues are tracked</h2><p class="muted">Primary repo: <a href="https://github.com/Tonna16/ClarityRead" target="_blank" rel="noopener noreferrer">Tonna16 / ClarityRead</a></p><p class="muted">Site repo: <a href="https://github.com/Tonna16/clarityread-site" target="_blank" rel="noopener noreferrer">Tonna16 / clarityread-site</a></p></article>
     </section>
   </main>
 
