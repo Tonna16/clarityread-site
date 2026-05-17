@@ -2,8 +2,8 @@
   "name": "clarityread-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Static website and serverless support endpoint for ClarityRead.",
+  "description": "Static website for ClarityRead with an EmailJS-powered support form.",
   "scripts": {
-    "test": "node --check support.js && node --check netlify/functions/support.js"
+    "test": "node --check support.js"
   }
 }
