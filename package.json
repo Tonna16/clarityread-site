@@ -1,0 +1,9 @@
+{
+  "name": "clarityread-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for ClarityRead with an EmailJS-powered support form.",
+  "scripts": {
+    "test": "node --check support.js"
+  }
+}
